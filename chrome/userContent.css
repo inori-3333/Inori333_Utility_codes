@@ -1,0 +1,45 @@
+/*
+    Author: Inori-333
+    Date: 2025-02-11
+    Description: This is a userContent.css file for Firefox.
+    It is used to customize the appearance and background image of the new tab page.
+    If you want to use this file, you need to put this folder "chrome" into the root dir of the config folder you are using
+    (Type "about:config" in the address bar and open it in Firefox ), 
+    and modify the Image name at Line40 to the image you want to use while put it into this folder. 
+*/
+
+@-moz-document url(about:home), url(about:newtab), url(about:privatebrowsing) {
+    .top-site-button .title, .context-menu-button {
+        color: #fff !important ;
+        text-shadow: 2px 2px 2px #222 !important ;
+    }
+    
+    .logo-and-wordmark {
+        display: none !important;
+    }
+
+    .search-wrapper {
+        display: none !important;
+    }
+
+    button.icon.icon-settings.personalize-button.personalize-animate-enter-done {
+        display: none !important;
+    }
+
+    body {
+        --newtab-topsites-outer-card-hover:rgba(255, 255, 255, 0.4) !important;
+        --newtab-element-hover-color: rgba(255, 255, 255, 0.3) !important;
+    }
+
+    body::before {
+        content: "" ;
+        z-index: -1 ;
+        position: fixed ;
+        top: 0 ;
+        left: 0 ;
+        background:radial-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.75)), no-repeat url(using.png) center ;
+        background-size: cover ;
+        width: 100vw ;
+        height: 100vh ;
+    }
+}
